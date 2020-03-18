@@ -38,7 +38,7 @@ public class Sorter {
     {
         int pivot = array[r];
         int i = (p-1);
-        for (int j=p; j<r; j++)
+        for (int j = p; j < r; j++)
         {
             if (array[j] <= pivot)
             {
