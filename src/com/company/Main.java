@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 
 public class Main {
 
+
     public static void main(String[] args) throws FileNotFoundException{
+
         long timeStart;
         long timeEnd;
         UtilityTool util = new UtilityTool();
@@ -41,7 +43,7 @@ public class Main {
                 break;
             case 3:
                 timeStart = System.currentTimeMillis();
-                sorter.quick(array);
+                sorter.quick(array, 0, array.length-1);
                 timeEnd = System.currentTimeMillis();
                 System.out.println("Dauer des Insertion-Sort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
             case 4:
