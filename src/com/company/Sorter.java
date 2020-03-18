@@ -21,7 +21,7 @@ public class Sorter {
             e.printStackTrace();
             System.out.println("Da hats den Linezaehler zerschossen :(");
         }
-        return length;
+        return length-1;
 
     }
 
@@ -51,4 +51,5 @@ public class Sorter {
     public void quick(int[] array){
 
     }
+
 }
