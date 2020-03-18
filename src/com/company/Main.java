@@ -9,22 +9,23 @@ public class Main {
         long timeStart;
         long timeEnd;
         UtilityTool util = new UtilityTool();
+        Scanner input = new Scanner(System.in);
 
 	    System.out.println("Bitte den ABSOLUTEN Pfad der zu sortierenden Datei angeben. (Z.B. C:\\Users\\ericw\\IdeaProjects\\Sorting Algorithms\\res\\daten_100k)");
 
-        Scanner s = new Scanner(System.in);
-	    String path = s.nextLine();
+
+	    String path = input.nextLine();
 
 	    File file = new File(path);
 
         Sorter sorter = new Sorter();
 
-        int elements = sorter.getLengthOfFile(file);
+        int elements = util.getLengthOfFile(file);
 
         int[] array = util.toArray(file, elements);
 
-	    System.out.println("\n Sortierverfahren auswaehlen: \n Insertion-Sort (1) \n Heap-Sort (2)\n Quick-Sort (3)\n Merge-Sort (4)");
-	    int select = s.nextInt();
+	    System.out.println("\n Sortierverfahren auswaehlen: \n Insertion-Sort (1) \n Heap-Sort \t\t(2)\n Quick-Sort \t(3)\n Merge-Sort \t(4)");
+	    int select = input.nextInt();
         switch(select){
             case 1:
                 timeStart = System.currentTimeMillis();
@@ -50,6 +51,7 @@ public class Main {
                 System.out.println("Dauer des Insertion-Sort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
 
         }
+
         util.checkIfSorted(array);
 
     }

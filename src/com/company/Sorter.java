@@ -8,23 +8,6 @@ import java.io.FileNotFoundException;
 
 public class Sorter {
 
-    public int getLengthOfFile(File file) throws FileNotFoundException{
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        int length = 0;
-        try {
-            while (reader.readLine() != null) {
-                length++;
-            }
-            reader.close();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-            System.out.println("Da hats den Linezaehler zerschossen :(");
-        }
-        return length-1;
-
-    }
-
     public void insertion(int[] array){
 
             int n = array.length;

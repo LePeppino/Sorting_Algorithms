@@ -3,6 +3,23 @@ import java.io.*;
 
 public class UtilityTool {
 
+    public int getLengthOfFile(File file) throws FileNotFoundException{
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        int length = 0;
+        try {
+            while (reader.readLine() != null) {
+                length++;
+            }
+            reader.close();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+            System.out.println("Da hats den Linezaehler zerschossen :(");
+        }
+        return length-1;
+
+    }
+
     public int[] toArray(File file, int elements) throws FileNotFoundException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
         int[] array = new int[elements];
