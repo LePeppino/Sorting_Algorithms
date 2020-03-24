@@ -39,18 +39,18 @@ public class Main {
                 timeStart = System.currentTimeMillis();
                 sorter.heap(array);
                 timeEnd = System.currentTimeMillis();
-                System.out.println("Dauer des Insertion-Sort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
+                System.out.println("Dauer des Heap-Sort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
                 break;
             case 3:
                 timeStart = System.currentTimeMillis();
                 sorter.quick(array, 0, array.length-1);
                 timeEnd = System.currentTimeMillis();
-                System.out.println("Dauer des Insertion-Sort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
+                System.out.println("Dauer des Quicksort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
             case 4:
                 timeStart = System.currentTimeMillis();
                 sorter.merge(array);
                 timeEnd = System.currentTimeMillis();
-                System.out.println("Dauer des Insertion-Sort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
+                System.out.println("Dauer des Merge-Sort bei " + elements + " Elementen: " +  (timeEnd - timeStart) + "ms");
 
         }
 

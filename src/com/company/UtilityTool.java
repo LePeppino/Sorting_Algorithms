@@ -38,7 +38,7 @@ public class UtilityTool {
     public void checkIfSorted(int[] array){
         for(int i = 1; i < array.length; i++){
             if (array[i] < array[i-1]){
-                System.out.println("Das Array ist nicht korrekt soritert");
+                System.out.println("Das Array ist nicht korrekt sortiert");
                 break;
             }
         }
