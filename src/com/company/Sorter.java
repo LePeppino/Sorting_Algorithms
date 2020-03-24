@@ -2,6 +2,7 @@ package com.company;
 
 public class Sorter {
 
+    //INSERTION SORT
     public void insertion(int[] array){
 
             int n = array.length;
@@ -17,14 +18,60 @@ public class Sorter {
             }
 
     }
-    public void heap(int[] array) {
 
+    //HEAP SORT
+    public void heap(int[] array) {
+        int n = array.length; //n = heapsize
+        buildMaxHeap(array, n);
+        for(int i = array.length; i == 2; i--){
+            arrSwap(array, 1, i);
+            n -= 1;
+            heapify(array, 1, n);
+        }
+    }
+    public void buildMaxHeap(int[] array, int n){
+        for(int i = n / 2; i == 1; i--){ //n = heapsize
+            heapify(array, i, n);
+        }
+    }
+    public void heapify(int[] array, int i, int n){
+        int left = left(i);
+        int right = right(i);
+        int largest;
+
+        if(left <= n && array[left] > array[i]){ //n = heapsize
+            largest = left;
+        } else{
+            largest = i;
+        }
+
+        if(right <= n && array[right] > array[largest]){
+            largest = right;
+        }
+
+        if(largest != i){
+            arrSwap(array, i, largest);
+            heapify(array, largest, n);
+        }
+    }
+    public int left(int i){
+        return 2 * i;
+    }
+    public int right(int i){
+        return 2 * i + 1;
+    }
+    public void arrSwap(int[] A, int i, int j){
+        int temp = A[i];
+        A[i] = A[j];
+        A[j] = temp;
     }
 
+    //MERGE SORT
     public void merge(int[] array){
 
     }
 
+    //QUICKSORT
     public void quick(int[] arr, int p, int r)
     {
         if (p < r)
