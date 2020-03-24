@@ -27,31 +27,27 @@ public static void main(String[] args) throws FileNotFoundException {
                 timeStart = System.currentTimeMillis();
                 sorter.insertion(array);
                 timeEnd = System.currentTimeMillis();
-                util.checkIfSorted(array);
                 System.out.println("Time to sort array of " + elements + " Elements using Insertionsort: " + (timeEnd - timeStart) + "ms");
                 break;
             case 2:
                 timeStart = System.currentTimeMillis();
                 sorter.heap(array);
                 timeEnd = System.currentTimeMillis();
-                util.checkIfSorted(array);
                 System.out.println("Time to sort array of " + elements + " Elements using Heapsort: " + (timeEnd - timeStart) + "ms");
                 break;
             case 3:
                 timeStart = System.currentTimeMillis();
                 sorter.quick(array, 0, array.length-1);
                 timeEnd = System.currentTimeMillis();
-                util.checkIfSorted(array);
                 System.out.println("Time to sort array of " + elements + " Elements using Quicksort: " + (timeEnd - timeStart) + "ms");
                 break;
             case 4:
                 timeStart = System.currentTimeMillis();
                 sorter.merge(array);
                 timeEnd = System.currentTimeMillis();
-                util.checkIfSorted(array);
                 System.out.println("Time to sort array of " + elements + " Elements using Mergesort: " + (timeEnd - timeStart) + "ms");
         }
-
+    util.checkIfSorted(array);
 
     }
 

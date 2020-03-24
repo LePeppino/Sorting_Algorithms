@@ -37,7 +37,7 @@ public class UtilityTool {
 
     public void checkIfSorted(int[] array){
         for(int i = 1; i < array.length; i++){
-            if (array[i] < array[i-1]){
+            if (array[i-1] > array[i]){
                 System.out.println("The array is NOT sorted correctly from lowest to highest.");
                 break;
             }

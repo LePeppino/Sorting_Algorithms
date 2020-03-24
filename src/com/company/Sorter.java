@@ -37,7 +37,7 @@ public class Sorter {
     private void heapify(int[] array, int n, int i){
         int left = left(i);
         int right = right(i);
-        int largest = i; //largest = wurzel
+        int largest = i; //largest = root
 
         if(left < n && array[left] > array[largest]){ //n = heapsize
             largest = left;
@@ -77,7 +77,7 @@ public class Sorter {
             while (arr[i] < pivot){i++;}
             while (arr[j] > pivot) {j--;}
             if (i <= j){
-                swap (arr, i, j);
+                arrSwap (arr, i, j);
                 i++;
                 j--;
             }
@@ -85,12 +85,4 @@ public class Sorter {
         if (low < j){quick(arr, low, j);}
         if (high > i){quick(arr, i, high);}
     }
-
-    public void swap (int[] array, int x, int y){
-        int temp = array[x];
-        array[x] = array[y];
-        array[y] = temp;
-    }
-
-
 }
