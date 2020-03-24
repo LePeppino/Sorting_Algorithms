@@ -13,7 +13,8 @@ public class Main {
         UtilityTool util = new UtilityTool();
         Scanner input = new Scanner(System.in);
 
-	    System.out.println("Bitte den ABSOLUTEN Pfad der zu sortierenden Datei angeben. (Z.B. C:\\Users\\ericw\\IdeaProjects\\Sorting Algorithms\\res\\daten_100k)");
+	    System.out.println("Bitte den ABSOLUTEN Pfad der zu sortierenden Datei angeben. " +
+                "(Z.B. C:\\Users\\ericw\\IdeaProjects\\Sorting Algorithms\\res\\daten_100k)");
 
 
 	    String path = input.nextLine();
