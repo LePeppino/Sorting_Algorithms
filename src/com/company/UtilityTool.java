@@ -14,7 +14,7 @@ public class UtilityTool {
         }
         catch(IOException e){
             e.printStackTrace();
-            System.out.println("Da hats den Linezaehler zerschossen :(");
+            System.out.println("Line counter got shredded :(");
         }
         return length-1;
 
@@ -29,7 +29,7 @@ public class UtilityTool {
             }
             catch(IOException e){
                 e.printStackTrace();
-                System.out.println("toArray hat sich zerschossen :(");
+                System.out.println("toArray got shredded :(");
             }
         }
         return array;
@@ -37,8 +37,8 @@ public class UtilityTool {
 
     public void checkIfSorted(int[] array){
         for(int i = 1; i < array.length; i++){
-            if (array[i] < array[i-1]){
-                System.out.println("Das Array ist nicht korrekt sortiert");
+            if (array[i-1] > array[i]){
+                System.out.println("The array is NOT sorted correctly from lowest to highest.");
                 break;
             }
         }

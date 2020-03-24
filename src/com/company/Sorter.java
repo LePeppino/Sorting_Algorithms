@@ -4,7 +4,6 @@ public class Sorter {
 
     //INSERTION SORT
     public void insertion(int[] array){
-
             int n = array.length;
             for (int i = 1; i < n; i++) {
                 int key = array[i];
@@ -18,27 +17,27 @@ public class Sorter {
             }
     }
 
-    //HEAP SORT (Rekursiv)
+    //HEAP SORT (recursive)
     public void heap(int[] array) {
         int n = array.length; //n = heapsize
         buildMaxHeap(array, n);
         for(int i = n - 1; i >= 0; i--){
-            //tausche wurzel mit ende
+            //swap root with end
             arrSwap(array, 0, i);
             heapify(array, i, 0);
         }
     }
 
-    public void buildMaxHeap(int[] array, int n){
+    private void buildMaxHeap(int[] array, int n){
         for(int i = n / 2 - 1; i >= 0; i--){ //n = heapsize
             heapify(array, n, i);
         }
     }
 
-    public void heapify(int[] array, int n, int i){
+    private void heapify(int[] array, int n, int i){
         int left = left(i);
         int right = right(i);
-        int largest = i; //largest = wurzel
+        int largest = i; //largest = root
 
         if(left < n && array[left] > array[largest]){ //n = heapsize
             largest = left;
@@ -52,14 +51,14 @@ public class Sorter {
         }
     }
 
-    //Hilfsmethoden
-    public int left(int i){
+    //HELPERS
+    private int left(int i){
         return 2 * i;
     }
-    public int right(int i){
+    private int right(int i){
         return 2 * i + 1;
     }
-    public void arrSwap(int[] A, int i, int j){
+    private void arrSwap(int[] A, int i, int j){
         int temp = A[i];
         A[i] = A[j];
         A[j] = temp;
@@ -71,34 +70,19 @@ public class Sorter {
     }
 
     //QUICKSORT
-    public void quick(int[] arr, int p, int r)
-    {
-        if (p < r)
-        {
-            int s = partition(arr, p, r);
-            quick(arr, p, s-1);
-            quick(arr, s+1, r);
-        }
-    }
-    public int partition(int[] array, int p, int r)
-    {
-        int pivot = array[r];
-        int i = (p-1);
-        for (int j = p; j < r; j++)
-        {
-            if (array[j] <= pivot)
-            {
+    public void quick(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low, j = high;
+        while (i <= j) {
+            while (arr[i] < pivot){i++;}
+            while (arr[j] > pivot) {j--;}
+            if (i <= j){
+                arrSwap (arr, i, j);
                 i++;
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                j--;
             }
         }
-        int temp = array[i+1];
-        array[i+1] = array[r];
-        array[r] = temp;
-
-        return i+1;
+        if (low < j){quick(arr, low, j);}
+        if (high > i){quick(arr, i, high);}
     }
-
 }
