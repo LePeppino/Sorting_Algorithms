@@ -8,8 +8,10 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 public class Main {
-private static long timerStart;
-private static long timerEnd;
+static String name = "";
+static long timerStart;
+static long timerEnd;
+static long temp1, temp2, temp3, temp4;
 
     public static void main(String[] args) throws FileNotFoundException {
     UtilityTool util = new UtilityTool();
@@ -22,38 +24,68 @@ private static long timerEnd;
     int elements = util.getLengthOfFile(file);
     int[] array = util.toArray(file, elements);
 
-    System.out.println("\n Choose sorting algorithm: \n Insertionsort \t(1) \n Heapsort \t\t(2)\n Quicksort \t\t(3)\n Mergesort \t\t(4)");
+    System.out.println("\n Choose sorting algorithm: \n Insertionsort \t(1) \n Heapsort \t\t(2)\n Quicksort \t\t(3)\n Mergesort \t\t(4)\n Comparison \t(5)");
     int select = input.nextInt();
-    String name = "";
         switch (select) {
             case 1:
-                timerStart = System.currentTimeMillis();
-                Insertionsort.sort(array);
-                timerEnd = System.currentTimeMillis();
-                name = "Insertionsort";
+                insertion(array);
                 break;
             case 2:
-                timerStart = System.currentTimeMillis();
-                Heapsort.sort(array);
-                timerEnd = System.currentTimeMillis();
-                name = "Heapsort";
+                heap(array);
                 break;
             case 3:
-                timerStart = System.currentTimeMillis();
-                Quicksort.sort(array, 0, array.length-1);
-                timerEnd = System.currentTimeMillis();
-                name = "Quicksort";
+                quick(array);
                 break;
             case 4:
-                timerStart = System.currentTimeMillis();
-                Mergesort.sort(array, 0, array.length-1);
-                timerEnd = System.currentTimeMillis();
-                name = "Mergesort";
+                merge(array);
+                break;
+            case 5:
+                insertion(array);
+                temp1 = timerEnd - timerStart;
+                array = util.toArray(file, elements);
+                heap(array);
+                temp2 = timerEnd - timerStart;
+                array = util.toArray(file, elements);
+                quick(array);
+                temp3 = timerEnd - timerStart;
+                array = util.toArray(file, elements);
+                merge(array);
+                temp4 = timerEnd - timerStart;
         }
-    util.checkIfSorted(array);
-    System.out.println("Time to sort an array of " + elements + " Elements using " + name + ": " + (timerEnd - timerStart) + "ms");
-
+        util.checkIfSorted(array);
+        if(select < 5) {
+            System.out.println("Time to sort an array of " + elements + " Elements using " + name + ": " + (timerEnd - timerStart) + "ms");
+        }
+        else{
+            System.out.println("Insertionsort: " + temp1 + "ms" + "\nHeapsort: \t\t" + temp2 + "ms" + "\nQuicksort: \t\t" + temp3 + "ms" + "\nMergesort: \t\t" + temp4 + "ms");
+        }
     }
 
+
+    public static void insertion(int[] array){
+        timerStart = System.currentTimeMillis();
+        Insertionsort.sort(array);
+        timerEnd = System.currentTimeMillis();
+        name = "Insertionsort";
+    }
+    public static void heap(int[] array){
+        timerStart = System.currentTimeMillis();
+        Heapsort.sort(array);
+        timerEnd = System.currentTimeMillis();
+        name = "Heapsort";
+    }
+    public static void quick(int[] array){
+        timerStart = System.currentTimeMillis();
+        Quicksort.sort(array, 0, array.length-1);
+        timerEnd = System.currentTimeMillis();
+        name = "Quicksort";
+    }
+    public static void merge(int[] array){
+        timerStart = System.currentTimeMillis();
+        Mergesort.sort(array, 0, array.length-1);
+        timerEnd = System.currentTimeMillis();
+        name = "Mergesort";
+    }
 }
+
 

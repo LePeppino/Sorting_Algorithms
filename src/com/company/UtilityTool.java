@@ -43,4 +43,8 @@ public class UtilityTool {
             }
         }
     }
+
+    public long getTimeDiff(long start, long end){
+        return end - start;
+    }
 }
