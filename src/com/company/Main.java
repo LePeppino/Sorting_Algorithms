@@ -2,7 +2,11 @@ package com.company;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-
+/*
+* Authors: Eric Walter, Giuseppe Buccellato, Niklas Kirschnowski
+* Algorithmen und Datenstrukturen, Prof. Karsten Morisse
+* Sommersemester 2020
+* */
 public class Main {
 
 
