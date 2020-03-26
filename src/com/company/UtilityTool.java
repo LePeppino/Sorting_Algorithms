@@ -5,7 +5,7 @@ public class UtilityTool {
 
     public int getLengthOfFile(File file) throws FileNotFoundException{
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        int length = 1;
+        int length = 0;
         try {
             while (reader.readLine() != null) {
                 length++;

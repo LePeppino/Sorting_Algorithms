@@ -23,7 +23,6 @@ static long temp1, temp2, temp3, temp4;
     File file = new File(path);
     int elements = util.getLengthOfFile(file);
     int[] array = util.toArray(file, elements);
-
     System.out.println("\n Choose sorting algorithm: \n Insertionsort \t(1) \n Heapsort \t\t(2)\n Quicksort \t\t(3)\n Mergesort \t\t(4)\n Comparison \t(5)");
     int select = input.nextInt();
         switch (select) {
@@ -61,7 +60,7 @@ static long temp1, temp2, temp3, temp4;
         }
     }
 
-
+//SORTING METHODS
     public static void insertion(int[] array){
         timerStart = System.currentTimeMillis();
         Insertionsort.sort(array);
