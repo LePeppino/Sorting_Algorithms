@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 public class Main {
-static String name = "";
+static String name;
 static long timerStart;
 static long timerEnd;
 static long temp1, temp2, temp3, temp4;
@@ -82,7 +82,7 @@ static long temp1, temp2, temp3, temp4;
     }
     public static void merge(int[] array){
         timerStart = System.currentTimeMillis();
-        Mergesort.sort(array, 0, array.length-1);
+        Mergesort.sort(array, 0, array.length);
         timerEnd = System.currentTimeMillis();
         name = "Mergesort";
     }
