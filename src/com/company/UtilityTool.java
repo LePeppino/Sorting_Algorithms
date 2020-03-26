@@ -5,7 +5,7 @@ public class UtilityTool {
 
     public int getLengthOfFile(File file) throws FileNotFoundException{
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        int length = 0;
+        int length = 1;
         try {
             while (reader.readLine() != null) {
                 length++;
@@ -14,9 +14,9 @@ public class UtilityTool {
         }
         catch(IOException e){
             e.printStackTrace();
-            System.out.println("Line counter got shredded :'(");
+            System.out.println("Line counter encountered a problem :'(");
         }
-        return length-1;
+        return length;
 
     }
 
@@ -29,7 +29,7 @@ public class UtilityTool {
             }
             catch(IOException e){
                 e.printStackTrace();
-                System.out.println("toArray got shredded :'(");
+                System.out.println("toArray encountered a problem :'(");
             }
         }
         return array;
