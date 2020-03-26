@@ -1,9 +1,11 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Sorter {
 
     //INSERTION SORT
-    public void insertion(int[] array){
+    public void insertionsort(int[] array){
             int n = array.length;
             for (int i = 1; i < n; i++) {
                 int key = array[i];
@@ -18,7 +20,7 @@ public class Sorter {
     }
 
     //HEAP SORT (recursive)
-    public void heap(int[] array) {
+    public void heapsort(int[] array) {
         int n = array.length; //n = heapsize
         buildMaxHeap(array, n);
         for(int i = n - 1; i >= 0; i--){
@@ -52,25 +54,50 @@ public class Sorter {
     }
 
     //HELPERS
-    private int left(int i){
+    private static int left(int i){
         return 2 * i;
     }
-    private int right(int i){
+    private static int right(int i){
         return 2 * i + 1;
     }
-    private void arrSwap(int[] A, int i, int j){
+    private static void arrSwap(int[] A, int i, int j){
         int temp = A[i];
         A[i] = A[j];
         A[j] = temp;
     }
 
     //MERGE SORT
-    public void merge(int[] array){
-
+    public void mergesort(int[] array, int start, int end) {
+        int middle = (start + end) / 2;
+        int lengthLeft = end - start;
+        if (lengthLeft <= 1) {
+            return;
+        }
+        mergesort(array, start, middle);
+        mergesort(array, middle, end);
+        merge(array, start, middle, end);
+    }
+    private static void merge(int[] array, int start, int mid, int end) {
+        int[] leftSubArray = Arrays.copyOfRange(array, start, mid);
+        int[] rightSubArray = Arrays.copyOfRange(array, mid, end);
+        int indexLeft = 0, indexRight = 0;
+        for(int i = start; i < end; i++) {
+            boolean more_left = indexLeft < leftSubArray.length;
+            boolean more_right = indexRight < rightSubArray.length;
+            boolean left_smaller = more_left && more_right
+                    && leftSubArray[indexLeft] <= rightSubArray[indexRight];
+            if (!more_right || left_smaller) {
+                array[i] = leftSubArray[indexLeft];
+                indexLeft++;
+            } else {
+                array[i] = rightSubArray[indexRight];
+                indexRight++;
+            }
+        }
     }
 
     //QUICKSORT
-    public void quick(int[] arr, int low, int high) {
+    public void quicksort(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = low, j = high;
         while (i <= j) {
@@ -82,7 +109,7 @@ public class Sorter {
                 j--;
             }
         }
-        if (low < j){quick(arr, low, j);}
-        if (high > i){quick(arr, i, high);}
+        if (low < j){quicksort(arr, low, j);}
+        if (high > i){quicksort(arr, i, high);}
     }
 }

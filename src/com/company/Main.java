@@ -25,29 +25,29 @@ public static void main(String[] args) throws FileNotFoundException {
         switch (select) {
             case 1:
                 timeStart = System.currentTimeMillis();
-                sorter.insertion(array);
+                sorter.insertionsort(array);
                 timeEnd = System.currentTimeMillis();
                 System.out.println("Time to sort array of " + elements + " Elements using Insertionsort: " + (timeEnd - timeStart) + "ms");
                 break;
             case 2:
                 timeStart = System.currentTimeMillis();
-                sorter.heap(array);
+                sorter.heapsort(array);
                 timeEnd = System.currentTimeMillis();
                 System.out.println("Time to sort array of " + elements + " Elements using Heapsort: " + (timeEnd - timeStart) + "ms");
                 break;
             case 3:
                 timeStart = System.currentTimeMillis();
-                sorter.quick(array, 0, array.length-1);
+                sorter.quicksort(array, 0, array.length-1);
                 timeEnd = System.currentTimeMillis();
                 System.out.println("Time to sort array of " + elements + " Elements using Quicksort: " + (timeEnd - timeStart) + "ms");
                 break;
             case 4:
                 timeStart = System.currentTimeMillis();
-                sorter.merge(array);
+                sorter.mergesort(array, 0, array.length-1);
                 timeEnd = System.currentTimeMillis();
                 System.out.println("Time to sort array of " + elements + " Elements using Mergesort: " + (timeEnd - timeStart) + "ms");
         }
-    util.checkIfSorted(array);
+        util.checkIfSorted(array);
 
     }
 
