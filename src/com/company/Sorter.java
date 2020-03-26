@@ -99,7 +99,8 @@ public class Sorter {
     //QUICKSORT
     public void quicksort(int[] arr, int low, int high) {
         int pivot = arr[high];
-        int i = low, j = high;
+        int i = low;
+        int j = high;
         while (i <= j) {
             while (arr[i] < pivot){i++;}
             while (arr[j] > pivot) {j--;}

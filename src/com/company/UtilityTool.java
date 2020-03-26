@@ -14,7 +14,7 @@ public class UtilityTool {
         }
         catch(IOException e){
             e.printStackTrace();
-            System.out.println("Line counter got shredded :(");
+            System.out.println("Line counter got shredded :'(");
         }
         return length-1;
 
@@ -29,7 +29,7 @@ public class UtilityTool {
             }
             catch(IOException e){
                 e.printStackTrace();
-                System.out.println("toArray got shredded :(");
+                System.out.println("toArray got shredded :'(");
             }
         }
         return array;
