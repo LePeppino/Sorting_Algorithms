@@ -14,9 +14,9 @@ public class UtilityTool {
         }
         catch(IOException e){
             e.printStackTrace();
-            System.out.println("Line counter got shredded :(");
+            System.out.println("Line counter encountered a problem :'(");
         }
-        return length-1;
+        return length;
 
     }
 
@@ -29,7 +29,7 @@ public class UtilityTool {
             }
             catch(IOException e){
                 e.printStackTrace();
-                System.out.println("toArray got shredded :(");
+                System.out.println("toArray encountered a problem :'(");
             }
         }
         return array;
@@ -42,5 +42,9 @@ public class UtilityTool {
                 break;
             }
         }
+    }
+
+    public long getTimeDiff(long start, long end){
+        return end - start;
     }
 }
