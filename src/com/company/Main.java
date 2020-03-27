@@ -21,8 +21,7 @@ public static void main(String[] args) throws FileNotFoundException {
     int elements = util.getLengthOfFile(file);
     int[] array = util.toArray(file, elements);
 
-    System.out.println("\n Choose sorting algorithm: " +
-            "\n Insertionsort (1) \n Heapsort \t\t(2)\n Quicksort \t(3)\n Mergesort \t(4)");
+    System.out.println("\n Choose sorting algorithm: \n Insertionsort \t(1) \n Heapsort \t\t(2)\n Quicksort \t\t(3)\n Mergesort \t\t(4)");
         int select = input.nextInt();
         switch (select) {
             case 1:
