@@ -13,14 +13,11 @@ static long timerStart;
 static long timerEnd;
 static long temp1, temp2, temp3, temp4;
 
-<<<<<<< HEAD
 public static void main(String[] args) throws FileNotFoundException {
 
     long timeStart;
     long timeEnd;
-=======
-    public static void main(String[] args) throws FileNotFoundException {
->>>>>>> f17a4d9b90b062e74307820dbd3df3696a30c718
+
     UtilityTool util = new UtilityTool();
     Scanner input = new Scanner(System.in);
 
@@ -31,14 +28,9 @@ public static void main(String[] args) throws FileNotFoundException {
     File file = new File(path);
     int elements = util.getLengthOfFile(file);
     int[] array = util.toArray(file, elements);
-<<<<<<< HEAD
 
-    System.out.println("\n Choose sorting algorithm: \n Insertionsort \t(1) \n Heapsort \t\t(2)\n Quicksort \t\t(3)\n Mergesort \t\t(4)");
-        int select = input.nextInt();
-=======
     System.out.println("\n Choose sorting algorithm: \n Insertionsort \t(1) \n Heapsort \t\t(2)\n Quicksort \t\t(3)\n Mergesort \t\t(4)\n Comparison \t(5)");
     int select = input.nextInt();
->>>>>>> f17a4d9b90b062e74307820dbd3df3696a30c718
         switch (select) {
             case 1:
                 insertion(array);
